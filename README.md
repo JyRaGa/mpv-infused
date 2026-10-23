@@ -10,6 +10,7 @@ Everything is plain mpv config and Lua scripts on top of Homebrew's mpv, so `bre
 - **Automatic subtitles.** English tracks are picked automatically. When a file has none, subtitles are fetched from OpenSubtitles, matched by file hash first, then by title and season/episode. They're saved next to the video as `name.en.srt`, so the next play is instant.
 - **Skip Recap / Intro / Credits.** When a chapter with one of those names starts, a prompt appears; press <kbd>Enter</kbd> to jump past it. It uses the chapter markers already embedded in most streaming releases.
 - **Right-click menu.** Play/pause, fullscreen, subtitle track picker, **Search Subtitles Online**, audio track, next chapter, float on top.
+- **Binge-friendly playback.** Resumes where you left off, queues the other videos in the folder so the next episode plays on, and stays on the last frame instead of closing. External audio tracks next to the video (`Episode.hi.m4a`) are loaded too, and the volume goes up to 250%.
 - **Window memory.** The window never opens larger than 75% of the screen, and reopens at the size and position you last used.
 - **Finder integration.** Builds a small `/Applications/mpv.app` launcher, so mpv appears in **Open With** and can be set as the default player.
 - **Resilient downloads.** Optional proxy for OpenSubtitles traffic, retries on flaky connections, and a check that rejects anything that isn't really a subtitle file (such as a network block page).
@@ -82,6 +83,8 @@ Your OpenSubtitles settings and saved window position are kept on every update. 
 | Seek ±5 seconds | <kbd>←</kbd> / <kbd>→</kbd> |
 | Seek ±1 minute | <kbd>Cmd</kbd>+<kbd>←</kbd> / <kbd>Cmd</kbd>+<kbd>→</kbd> |
 | Volume ±5 | <kbd>↑</kbd> / <kbd>↓</kbd> |
+| Next / previous file in the folder | <kbd>&gt;</kbd> / <kbd>&lt;</kbd> |
+| Screenshot to the Desktop (PNG) | <kbd>s</kbd> |
 
 Everything else is standard mpv.
 
@@ -106,7 +109,7 @@ ffmpeg -i in.mkv -map 0:v -map 0:a -map 0:s -c copy -c:s mov_text -tag:v dvh1 -s
 
 ```
 config/
-  mpv.conf                      renderer, hardware decoding, window size, subtitle language
+  mpv.conf                      renderer, hardware decoding, window, subtitles, resume, playlist
   input.conf                    key bindings
   scripts/
     opensubtitles.lua           automatic + on-demand subtitle downloads
