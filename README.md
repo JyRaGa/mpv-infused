@@ -80,6 +80,8 @@ Your OpenSubtitles settings and saved window position are kept on every update. 
 | Skip recap / intro / credits | <kbd>Enter</kbd> while the prompt is showing |
 | Context menu | Right-click |
 | Seek ±5 seconds | <kbd>←</kbd> / <kbd>→</kbd> |
+| Seek ±1 minute | <kbd>Cmd</kbd>+<kbd>←</kbd> / <kbd>Cmd</kbd>+<kbd>→</kbd> |
+| Volume ±5 | <kbd>↑</kbd> / <kbd>↓</kbd> |
 
 Everything else is standard mpv.
 
