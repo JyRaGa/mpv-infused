@@ -1,0 +1,20 @@
+# OpenSubtitles settings for scripts/opensubtitles.lua
+# install.sh copies this to ~/.config/mpv/script-opts/opensubtitles.conf (readable only by you).
+
+# Required. Get a free key: sign in at opensubtitles.com, then go to https://www.opensubtitles.com/en/consumers
+api_key=
+
+# Optional: your OpenSubtitles login raises the daily download limit
+username=
+password=
+
+# Languages to fetch, in order of preference (OpenSubtitles codes)
+languages=en
+
+# Search automatically when a file has no English subtitles (Alt+O / right-click always searches on demand)
+auto=yes
+
+# Optional: route OpenSubtitles traffic through an HTTP proxy, e.g. if your network blocks their download server
+# proxy=http://user:pass@host:port/
+# Page to open when that proxy stops working, e.g. your proxy provider's dashboard
+# proxy_page=

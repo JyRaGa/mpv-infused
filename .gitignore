@@ -1,0 +1,6 @@
+# Personal settings and generated files never belong in the repo
+opensubtitles.conf
+window-geometry.conf
+*.srt
+build/
+.DS_Store
