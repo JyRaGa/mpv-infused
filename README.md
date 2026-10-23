@@ -52,6 +52,26 @@ Adding your OpenSubtitles `username` and `password` there raises the daily downl
 
 If your network blocks OpenSubtitles' download server (the script will say *"download was not a subtitle file"*), you can route its traffic through an HTTP proxy with `proxy=http://user:pass@host:port/`. Set `proxy_page=` to a URL to open automatically when that proxy stops working.
 
+## Update
+
+**mpv itself** updates with Homebrew. The launcher app points at Homebrew's binary, so nothing else is needed:
+
+```bash
+brew upgrade mpv
+```
+
+**mpv-infused** (scripts and config) updates from the repo:
+
+```bash
+cd mpv-infused
+git pull
+./install.sh --no-app
+```
+
+`--no-app` leaves `/Applications/mpv.app` untouched. Leave it off only when a release changes the launcher (`app/`): rebuilding re-signs the app, so macOS will ask once more for permission to open files in folders like Downloads.
+
+Your OpenSubtitles settings and saved window position are kept on every update. If you've edited `mpv.conf`, `input.conf` or the scripts in `~/.config/mpv` yourself, the installer replaces them with the repo's versions, so keep your own changes in the repo copy (or a fork) instead.
+
 ## Controls
 
 | Action | Key / mouse |
