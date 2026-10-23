@@ -23,7 +23,7 @@ Everything is plain mpv config and Lua scripts on top of Homebrew's mpv, so `bre
 ## Install
 
 ```bash
-git clone https://github.com/<you>/mpv-infused.git
+git clone https://github.com/JyRaGa/mpv-infused.git
 cd mpv-infused
 ./install.sh
 ```
